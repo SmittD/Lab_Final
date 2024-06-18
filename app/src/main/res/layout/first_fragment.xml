@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_first"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/numberHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:hintTextColor="@color/hintTextColor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/numberHeightEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/your_height"
+            android:inputType="numberDecimal"
+            android:textColor="?attr/colorOnBackground"
+            android:textColorHint="@color/hintTextColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/numberWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberHeight"
+        app:hintTextColor="@color/hintTextColor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/numberWeightEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/your_weight"
+            android:inputType="numberDecimal"
+            android:textColor="?attr/colorOnBackground"
+            android:textColorHint="@color/hintTextColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textBmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/your_bmi"
+        android:textSize="20sp"
+        android:textColor="?attr/colorOnBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberWeight" />
+
+    <Button
+        android:id="@+id/buttonBmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:background="?attr/colorPrimary"
+        android:text="@string/count"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBmi" />
+
+    <ImageView
+        android:id="@+id/imageBmi"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBmi"
+        app:srcCompat="@drawable/bmi_40more" />
+
+    <Button
+        android:id="@+id/buttonToggleTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:text="Toggle Theme"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonBmi"
+        app:layout_constraintTop_toTopOf="@+id/buttonBmi" />
+
+    <!-- Radio buttons and navigate button -->
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageBmi">
+
+        <RadioButton
+            android:id="@+id/radioButtonSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Second Fragment" />
+
+        <RadioButton
+            android:id="@+id/radioButtonThird"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Third Fragment" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonNavigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigate"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
